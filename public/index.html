@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Payment Advice Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-md mx-auto bg-white p-6 rounded shadow">
+    <h1 class="text-xl font-bold mb-4">Payment Advice Generator</h1>
+
+    <form action="/api/generate" method="POST">
+      <input name="sender" placeholder="Sender Name" class="w-full mb-2 p-2 border" required />
+      <input name="receiver" placeholder="Receiver Name" class="w-full mb-2 p-2 border" required />
+      <input name="amount" placeholder="Amount (₦)" class="w-full mb-2 p-2 border" required />
+      
+      <select name="bank" class="w-full mb-2 p-2 border">
+        <option>GTBank</option>
+        <option>Access Bank</option>
+        <option>Zenith Bank</option>
+        <option>UBA</option>
+        <option>First Bank</option>
+        <option>Opay</option>
+        <option>Moniepoint</option>
+      </select>
+
+      <input name="reference" placeholder="Transaction Reference" class="w-full mb-2 p-2 border" required />
+
+      <button class="bg-blue-600 text-white w-full py-2 rounded">
+        Generate PDF
+      </button>
+    </form>
+
+    <p class="text-xs text-gray-500 mt-3">
+      This document is a payment advice and not a bank receipt.
+    </p>
+  </div>
+</body>
+</html>
